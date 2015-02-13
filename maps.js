@@ -1,10 +1,13 @@
 //This is a service type module for creating maps.
 //It allows you to async load the google maps API on pages that have maps.
 //When the API is loaded.  The map DOM node will emit a 'googleMapReady' event
+//To Use:
+//  <div id="my-map" class="js-google-map"></div>
+// $('#my-map').on('googleMapReady', function(){...});
 app.maps = (function($){
   'use strict';
 
-  var MAPSELECTOR = '.js-national-map';
+  var MAPSELECTOR = '.js-google-map';
 
   // The function that loads the google map api script and initializes any maps the wrapper callback
   function loadGoogleMapsApi() {
@@ -15,7 +18,7 @@ app.maps = (function($){
     document.body.appendChild(script);
   }
 
-  // callback function for google maps load based on data-map-init="" attribute
+  // Trigger event on all map elements.
   function initAllMaps(){
     $(MAPSELECTOR).trigger('googleMapReady');
   }
