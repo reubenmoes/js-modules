@@ -3,7 +3,9 @@
 //Markup:
 //<a data-share-site="Facebook" href="http://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Fmountbakertheatre.php-dev.domain7.com%2Fshows%2Fneko-case%2F" class="js-share_link">Facebook</a>
 app.socialShare = (function($){
-  var selector = '.js-share_link'
+  'use strict';
+
+  var selector = '.js-share_link';
 
   function init(){
     $(selector).click(function(e){
